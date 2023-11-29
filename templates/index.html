@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Table A4</title>
+    <style>
+        body {
+            background-color: #ccc;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #000;
+            font-size: 18px;
+        }
+
+        page[size="A4"] {
+            width: 21cm;
+            height: 29.7cm;
+            background: white;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 0.5cm;
+            padding: 25px 15px;
+            position: relative;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        div.flex-container {
+            display: flex;
+            height: 22.2cm;
+            margin-top: -4px;
+        }
+
+        div.left-panel {
+            width: 19%;
+            height: 100%;
+        }
+
+        div.right-panel {
+            width: 81%;
+        }
+
+        div.content {
+            padding: 1rem;
+        }
+
+        p.date {
+            text-align: end;
+            font-size: 16px;
+            margin-left: 2rem;
+        }
+
+        div.centered {
+            text-align: center;
+        }
+
+        div.title {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        div.subtitle {
+            font-size: 19px;
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th.cell {
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        div.signature {
+            font-size: 15px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<page size="A4">
+    <img src="http://127.0.0.1:9000/static/images/banner.jpg">
+    <div class="flex-container">
+        <div class="left-panel">
+            <img src="http://127.0.0.1:9000/static/images/banner1.jpg">
+        </div>
+        <div class="right-panel">
+            <div class="content">
+                <p class="date">10/08/201</p>
+                <div class="centered">
+                    <div class="title"><u>אישור סטודנט</u></div>
+                    <div class="subtitle">הננו לאשר כי</div>
+                    <table>
+                        <tr>
+                            <th class="cell">
+                                <input type="text" placeholder="" value="{{ data.FirstName }}" style="text-align: center;">
+                            </th>
+                            <th class="cell">
+                                <input type="text" placeholder="" value="{{ data.Family }}" style="text-align: center;">
+                            </th>
+                            <th class="cell">
+                                <input type="text" placeholder="" value="{{ data.student_identity_type }}" style="text-align: center;">
+                            </th>
+                            <th class="cell">
+                                <input type="text" placeholder="" value="{{ data.student_identity }}" style="text-align: center;">
+                            </th>
+                        </tr>
+                    </table>
+                    <div class="subtitle">הינו תלמיד במוסדותינו</div>
+                    <div class="signature">
+                        אהרן מלאכי ת.ז. 222050005<br>חבר ועד ומורשה חתימה
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="http://127.0.0.1:9000/static/images/banner.jpg">
+</page>
+</body>
+</html>

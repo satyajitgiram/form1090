@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="he-IL">
+
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title></title>
+    <style>
+
+        .frame {
+            width: 20cm;
+            height: 29cm;
+            /*border: 10px solid #050a87;
+            border-style: double;
+            margin: 30px;*/
+            padding: 15px 10px;
+            direction: rtl;
+            font-family: Arial;
+            font-size: 18px;
+            margin: auto;
+        }
+
+        .form {
+        }
+
+        .regInput {
+            border: 0;
+            outline: 0;
+            background: transparent;
+            /*border-bottom: 1px solid black;*/
+            display: inline;
+            /*margin: 10px;*/
+            width: 23.9%;
+           
+        }
+
+        .dateInput {
+            border: 0;
+            outline: 0;
+            background: transparent;
+            /*border-bottom: 1px solid black;*/
+            display: inline;
+            margin: 10px;
+            width: 40px;
+            text-align:center;
+        }
+
+        .regSpan {
+            width: 300px;
+            display: inline-block;
+            font-size: 14px;
+            text-align:center;
+        }
+
+        .footerSpan {
+            width: 23.5%;
+            display: inline-block;
+            font-size:14px;
+        }
+
+        .title {
+            text-align: center;
+            font-weight: 700;
+            font-size: 22px;
+        }
+
+
+        .d_span {
+            margin-right: 30px;
+            font-weight: 700;
+        }
+        hr {
+            height: 1px;
+            background: black;
+        }
+        .wide_input {
+            width: 200px;
+            margin-right: 60px;
+            margin-left: 40px;
+            border: 0;
+            outline: 0;
+            background: transparent;
+            /*border-bottom: 1px solid black;*/
+            display: inline;
+            text-align:center;
+        }
+        .inputDiv input{
+            text-align: center;
+        }
+    </style>
+</head>
+    <body>
+        <div class="frame">
+            <hr />
+            <div class="title">
+                <span style="color:blue;font-size:28px;line-height:2">מדינת ישראל&nbsp;&nbsp;&nbsp;האגף הבכיר למוסדות תורניים</span>
+                <div style="display:inline-block;float:left"><img style="height:55px;width:130px" src="https://mllcr.info/static/images/Ishur5logo.jpg" /></div>
+            </div>
+            <br /><br />
+            <div class="title"><span>אישור לימודים</span></div>
+            <br />
+            <span>לכל מאן דבעי,</span><br /><span>הרינו לאשר כי:</span>
+            <br />
+            <br />
+            <div class="inputDiv">
+                <input class="regInput" value={{data.FirstName}} />
+                <input class="regInput" value={{data.Family}} />
+                <input class="regInput" value={{data.ZihuyType}} />
+                <input class="regInput" value=" {{ data.Zeout}}{{ data.Darkon}} "} />
+            </div>
+            <hr style="margin:2px" />
+            <div style="text-align:center">
+                <span class="footerSpan">שם פרטי</span>
+                <span class="footerSpan">שם משפחה</span>
+                <span class="footerSpan">סוג מזהה תלמיד</span>
+                <span class="footerSpan">מזהה תלמיד</span>
+            </div>
+            <br />
+            <div  class="inputDiv">
+                <input class="regInput" value={{data.BDE}} />
+                <input class="regInput" value= "זכר" />
+                <input class="regInput" value={{data.MaritalStatus}} />
+                <input class="regInput" value={{data.Country}} />
+            </div>
+            <hr style="margin:2px" />
+            <div style="text-align:center">
+                <span class="footerSpan">תאריך לידה</span>
+                <span class="footerSpan">מגדר</span>
+                <span class="footerSpan">מצב משפחתי</span>
+                <span class="footerSpan">ארץ מוצא</span>
+            </div>
+            <br /><br />
+            <div style="text-align:center">
+                <input class="wide_input" value= "לומד/פעיל" />
+                <input class="wide_input" value={{data.numOfMonths}} />
+            </div>
+            <hr style="margin:2px" />
+            <div style="text-align:center">
+                <span class="regSpan">מצב תלמיד</span>
+                <span class="regSpan">מספר חודשים שמוסד/ות נתמך/ים בגינו</span>
+            </div>
+            <br /><br />
+            <span style="margin-left:20px">דווח על ידי מוסד:</span><input class="regInput" value={{data.MosdName}} />
+            <br /><br />
+            <div style="">
+                <span style="margin-right:40px" class="footerSpan">בסוג לימוד יום שלם</span><input class="regInput" value={{data.StudyType}} />
+                {% if data.StudyType.startswith('6') %}
+                    <input class="wide_input" value="כולל אברכים יום שלם" />
+                {% elif data.StudyType.startswith('7') %}
+                    <input class="wide_input" value="כולל אברכים חצי יום" />
+                {% else %}
+                    <input class="wide_input" value="{{data.studyType}}" />
+                {% endif %}
+            </div>
+            <hr style="margin-right:150px;margin-bottom:2px;margin-top:2px" />
+            <div style="display:inline-block;margin-right:250px"><span class="footerSpan">מספר סוג לימוד</span><span class="regSpan">שם סוג לימוד</span></div>
+            <br /><br />
+            <span>בחודש</span><input class="regInput" style="border-bottom: 1.5px solid black;    text-align: center; margin-right:103px" value={{data.Date|slice(3, 8)}} /><span>כתלמיד לצורך קבלת תמיכה ממשרד החינוך.</span>
+            <br /><span class="footerSpan" style="margin-right:200px">חודש דיווח</span>
+            <br /><br /><br />
+            <span>בברכה,</span>
+            <br />
+
+            <div style="width:220px;"><span style="font-style:italic;font-weight:700">האגף הבכיר למוסדות תורניים משרד החינוך</span></div>
+            <div style="margin-right:150px;margin-top:320px"><span>הופק ע"י:</span><input class="regInput" value={{data.byName}} /><span style="margin-right:100px">1</span><input class="regInput" style="float:left;text-align:left" value={{data.Date}} /></div>
+        </div>
+    </body>
+</html>

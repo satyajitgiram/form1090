@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Table A4</title>
+    <!-- CSS -->
+    <style>
+      body {
+        /* background-color: #ccc; */
+        font-family: Arial, Helvetica, sans-serif;
+        align-items: center;
+        color: #000;
+        font-size: 20px;
+      }
+      .bold {
+        font-weight: bold;
+      }
+      page {
+        background: white;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 0.5cm;
+        /* padding: 25px 15px; */
+        position: relative;
+      }
+      page[size="A4"] {
+        width: 27cm;
+        height: 29.7cm;
+      }
+      @media print {
+        body,
+        page {
+          margin: 0;
+          box-shadow: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <page size="A4" style="padding: 0px; margin:0">
+        
+      <div style="width: 27cm; text-align: center">
+            <img
+              src="https://mllcr.info/static/images/banner4.png"
+              style="
+                display: inline-block;
+                margin-left: 10px;
+                vertical-align: middle;
+                width:27cm
+              "
+            />
+    </div>
+      <div style="text-align: left;margin-top:10px;margin-left: 64px; margin-bottom: 40px">בס"ד, {{DETA}}      </div>
+
+
+      <div
+        style="
+          margin-top: 2.5rem;
+          text-align: center;
+          font-weight: bold;
+          font-size: 32px;
+        "
+      >
+        <u>
+            אישור
+        </u>
+        <p style="font-weight:normal; font-size: 25px;">הננו לאשר כי התלמיד</p>
+      </div>
+      <div
+        style="
+          margin-top: 1.5rem;
+          text-align: center;
+          font-weight: normal;
+          font-size: 25px;
+        "
+      >
+        <p><span>{{data.Family}} </span><span> {{data.FirstName}}</span></p>
+        <p style="direction: ltr ;"><span>{{data.student_identity}}</span><span > : מזהה</span></p>
+        <p style="direction: ltr ;"><span> {{ data.Ishur1Shana}} </span><span>קיבל מילגה בחודשים 10-11-12 בשנת</span></p>
+        <p style="direction: ltr ;">להלן פירוט הסכומים לפי חודשים</p>
+        <p style="direction: ltr ;"></p>
+        <p style="direction: ltr ; font-size: 18px;">&nbsp;<span>{{data.Ishur1Price12}}</span><span>:חודש 12</span> &nbsp;<span>{{data.Ishur1Price11}}</span><span>:חודש 11</span> &nbsp;<span>{{data.Ishur1Price10}}</span><span>:חודש 10</span></p>
+      </div>
+      <br /><br />
+      
+
+      <div
+      style="
+        margin-top: 4.5rem;
+        text-align: center;
+        font-weight: bold;
+        font-size: 22px;
+
+      "
+    >
+      <p style="font-weight: normal;">בכבוד רב</p>
+      <p style="margin-bottom: 0;"> הרב מרדכי ציינוירט ת.ז. 301343224<br />
+        חבר ועד ומורשה חתימה
+    </p>
+    <img src="https://mllcr.info/static/images/signature1.jpg" alt="signature">
+    </div>
+    </page>
+  </body>
+</html>

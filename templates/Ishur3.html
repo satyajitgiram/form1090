@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+    body, h1 {
+        padding: 0;
+        font-family: David Libre, Helvetica, sans-serif;
+        color: #000;
+        font-size: 19px;
+    }
+    page{
+          background: white;
+          display: block;
+          margin: 0 auto;
+          margin-bottom: 0.5cm;
+          padding: 25px 15px;
+          position: relative;
+        }
+    .bold{
+          font-weight: bold; 
+    } 
+
+    .container {
+        text-align: center;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0%);
+    }
+    .container2 {
+        /* text-align: center;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0%); */
+    }
+
+   
+    .logo {
+        width: 50px; 
+    }
+
+    .text {
+        font-size: 30px;
+        color:rgb(55,101,255);
+    }
+    page[size="A4"] {  
+          width: 21cm;
+          height: 29cm; 
+        }
+
+        .widget-title {
+            color: #000;
+            font-weight: bold;
+            margin-bottom: 0;
+            display: table;
+        }
+
+        .widget-title:before,
+        .widget-title:after,
+        .widget-title span {
+            display: table-cell;
+            vertical-align: middle;
+            line-height: 1;
+        }
+
+        .widget-title:before {
+            content: '[';
+            font-weight: normal;
+            font-size: 49px;
+            color: #000;
+        }
+
+        .widget-title:after {
+            content: ']';
+            font-weight: normal;
+            font-size: 49px;
+            color: #000;
+        }
+
+        @media print {
+          body, page {
+            margin: 0;
+            box-shadow: 0;
+          }
+        }
+</style>
+<body>
+    <page size="A4" style="padding: 30px;">
+        <div class="container">
+            <img class="logo" src="https://mllcr.info/static/images/0.jpg" alt="Logo">
+            <h1 class="text" style="margin-top: -3px; margin-bottom:0;"> משרד העבודה</h1>
+        </div>
+        <div class="container2" style="left:90px">
+            <img height="85px" style="position: relative;right: 80%;" src="https://mllcr.info/static/images/4.jpg">
+        </div>
+        <div style="text-align:center ;margin-bottom:30px; font-weight: bold;font-size: 25px;" >
+            נספח מס '8 למבחני התמיכה</div>
+        <div style="margin-top: 2.5rem; text-align: center; margin-bottom:20px; font-weight: bold;font-size: 27px;">
+            <u> אישור לימודים במוסדות תורניים <br>לתשומת לב: חובה למלא את כל השדות בטופס. אי מילוי הטופס יגרום לעיכוב בטיפול</u>
+        </div>
+        <div style="text-align: right;margin-bottom:20px;font-size: 21px;" >
+            אני הח"מ, מאשר ומצהיר בזה כדלקמן:
+        </div>
+            <br><br>
+
+        <div style="margin-bottom: 60px;">
+            <table style="width: 100%; text-align: center;">
+                <tr style="font-size: 21px;">
+                <td>
+                    התלמיד
+                </td>
+                <td style="text-align: center; margin-left: 20px; font-size: 21px;">
+                    <input type="text" name="" value= "{{ data.FirstName}} {{ data.Family}}" style="width: 230px; border: 0; border-bottom: 1px solid #817c7c; font-weight: bold; text-align: center;">
+                    <br>
+                    שם ושם משפחה</td>
+                <td style="text-align: center; font-size: 21px;">
+                    <input type="text" name="" value= "{{ data.Zeout}}{{ data.Darkon}}" style="width: 230px; border: 0; border-bottom: 1px solid #817c7c; font-weight: bold; text-align: center;">
+                    <br>
+                    מס' ת.ז. התלמיד<span style="font-weight: bold;">בן 9 ספרות</span>
+                </td>
+                </tr>
+            </table>
+        </div>
+
+        <table style="width: 100%; text-align: center; margin-bottom: 30px;">
+            <tr style="font-size: 21px;">
+                <td style="font-weight: bold; text-align: right;">
+                    לומד במוסדות תורניים                
+                </td>
+                <td style="text-align: center;width: 350px;">
+                <input type="text" name="" value= "{{data.MosdName}}" style="border: 0; border-bottom: 1px solid #817c7c; font-weight: bold; text-align: center;"><br>
+                שם מוסד הלימודים
+                </td>
+                <td style="text-align: center;">
+                <input type="text" name="" value="40" style="width: 130px; border: 0; border-bottom: 1px solid #817c7c; font-weight: bold; text-align: center;"><br>
+                נא לציין
+				    מספר
+                </td>
+                <td style='width:auto'>
+                    שעות לימוד <br>
+                    שבועיות 
+                </td>
+            </tr>
+        </table>
+          
+        <table style="width: 100%; text-align: center;margin-bottom: 30px;">
+            <tr style="font-size: 21px;">
+            <td style="text-align: right;">
+                כתובת מלאה של מוסד הלימודים            
+            </td>
+                <td style=" text-align: initial;">
+                    <input type="text" name="" value= "{{data.MosdAdd}}" style="width: 400px; border: 0; border-bottom: 1px solid #817c7c; font-weight: bold; text-align: center;">
+                </td>
+            </tr>
+            <tr style="font-size: 21px;">
+            <td style="text-align: right;">
+                טלפון מוסד הלימודים            
+            </td>
+            <td style="text-align: initial;">
+                <input type="text" name="" value="0747871914" style="width: 280px; border: 0; border-bottom: 1px solid #817c7c; font-weight: bold; text-align: center;">
+            </td>
+            </tr>
+        </table>
+
+        <div style="margin-bottom: 30px;">
+            <table style="width: 100%; text-align: center; font-size:21px">
+              <tr>
+                <td style="width: 310px;text-align: right;font-size:21px">
+                  תאריך תחילת הלימודים <span style="font-weight: bold;">(יש למלא בעת מעבר מוסד לימודים במהלך שנת הלימודים בלבד)</span>
+                </td>
+                <td>
+                  <input type="text" name="" value="" style="width: 55px; border: 0; border-bottom: 1px solid #817c7c; font-weight: bold; text-align: center;">/
+                  <br>
+                  <span style="font-weight: bold;">שנה</span>
+                </td>
+                <td>
+                  <input type="text" name="" value="" style="width: 55px; border: 0; border-bottom: 1px solid #817c7c; font-weight: bold; text-align: center;">/
+                  <br>
+                  <span style="font-weight: bold;">חודש</span>
+                </td>
+                <td>
+                  <input type="text" name="" value="" style="width: 55px; border: 0; border-bottom: 1px solid #817c7c; font-weight: bold; text-align: center;">
+                  <br>
+                  <span style="font-weight: bold;">יום</span>
+                </td>
+                <td>
+                  <!-- <p class="widget-title" style="font-weight: bold; margin-bottom: 0px;">
+                    נא ציין<br>
+                    תאריך מדוייק
+                  </p> -->
+                  <div class="widget-title">
+                    <span>נא ציין<br>תאריך מדוייק</span>
+                </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%; text-align: center;">
+              <tr style="font-size: 21px;">
+                <td style="width: 33%; padding: 0 10px;">
+                  <input type="text" name="" value="10/08/2023" style="width: 100%; border-top: 0; padding-top: 59.5px; padding-bottom: 21px; border-left: 0; border-right: 0; border-bottom: 1px solid #817c7c; font-weight: bold; text-align: center;"><br>
+                  תאריך
+                </td>
+                <td style="width: 33%; padding: 0 10px;">
+                    <img src="https://mllcr.info/static/images/2.jpg" style="position: relative; height: 55px;margin-top: 20px; top:18px;" alt="">
+                  <input type="text" name="" value="" style="width: 100%; border-top: 0; border-left: 0; border-right: 0; border-bottom: 1px solid #817c7c; font-weight: bold; text-align: center;"><br>
+                  חתימה
+                </td>
+                <td style="width: 33%; padding: 0 10px;">
+                    <img src="https://mllcr.info/static/images/1.jpg" style="position: relative; height: 75px; top:18px;" alt="">
+                  <input type="text" name="" value="" style="width: 100%; border-top: 0; border-left: 0; border-right: 0; border-bottom: 1px solid #817c7c; font-weight: bold; text-align: center;"><br>
+                  חותמת
+                </td>
+              </tr>
+            </table>
+          </div>
+		          <br /><br /><br /><br /><br /><br />
+			  
+        <div style="position: relative;margin-top: 40px; font-size:20px;">
+            <p>אגף בכיר לעידוד תעסוקת הורים | <a style="font-family:sans-serif;color:blue;" href="https://go.gov.il/daycare" target="_blank"> go.gov.il/daycare</a> | <a href="https://www.gov.il/he/departments/labor/govil-landing-page" style="font-family:sans-serif; color:blue;"  target="_blank">labor.gov.il</a> </p>
+            <p>בנק ישראל 5 קריית הממשלה, ירושלים | טל .03-9533300 | פניות הציבור 074-7696498</p>
+        </div>
+		  
+		  
+    </page>
+</body>
+</html>

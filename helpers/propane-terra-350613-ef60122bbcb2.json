@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "propane-terra-350613",
+  "private_key_id": "ef60122bbcb2c505a37e03bd9ed7780caf56d0a8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC/roIbIQDD0Wkh\n+5t3aZQIjl+vYDL5czJ+4NXLL4rXRF4QbFDiD8/jY765oMWexQa2zSPB6jAJVSG4\nfShtEjZ8dAOricEwc4uOBX5uGN7MYljEo5L+kZK9cZCmk4NhJULq5n3az6hysSgx\n3aoCOwo5r3ZJtmhDADGWfFJMJ6Uj+zE5M7OT8OHFb1UHHT2ujECk/yRsxcBtMPTs\nmX/wi8vZizAb/sEvnT5AB19c6JqzZwFzeSi5Vc91YgGYcn0rpAcbRSjZakdw3tnY\n7oPpXaZkfaL7BHD1bOcUodJ6xgtjwhXsms1J1XMybLuuJejZZKGxb+1CZ2+aIMxu\noTV6dJHZAgMBAAECggEABQC6f5fEa9f23P6yp5K3XOPOZoblvbH+guY+Xj++6XBs\n3hPdppDQFbjAPRsPnV26F6JSCRkiKNQyfZyypeogRu5GPD9rreaOIWZOTvRSOFZm\nx7cXOpK1GEGzC031U19EGFpstX3PATNTf72v1sAQu8GzHihnHzyNjsZu5XLxcfds\nUzwmKmSAIUrm3MZxmwNSEvpQxkYHmCK1xEm+QmO+j1HtVtm0H84zDsxY0Ql0U91E\nyGfemsWKf8Wq0zDCkruPCCSr2zrmBtXVTXHKlp52GtxdJD8FAKy28bo0Pco3pwQ5\nWHHALrTkiT1107DPTmNsxG+WD2MbWMBPlMZGlEFxSQKBgQDrdxYqNjtbvbcUxDg2\nCpuEULflTIdvAUB4bB8pzPccrJM0PB+3CvbHulusMyZrCNTDr/jpcVmmAewv/rwp\n7CJqYM0hybAVbscWkIfdk+s8H7RR7HjY1SkMZu/b4U8E8duOLOn7M6GedTrHg2ml\n2gZFvjzniTcPPrh6xbS/K3I7vQKBgQDQZe0inZc2lvF5aApQYiyWkbtZFEy0n8Cb\nyCpVhTxj4pZ0PM5bHCVS0+Jigv4SbyPqv7yPZ7EjyrB48iabwuQzfAdUrUkC1D3o\nDv2n2AVtI5DRc7GlfewO/qQfwgevFMDV7EawpKvTOPe5eeMZlfh9WIssyiac/f5h\nz47xs6eiTQKBgGNiunpKtbc9Vl9viwJUa9vnbhdcu/WAo8Owb17nYo450VBE6GYM\nPKmE4VjHpjmbWqLWTcvKyjolqZmAfc98GfKotSzDwozpWyMNEivWWX3hK+1AUKnF\nHzRa5nb6nK3LoA5cqs4atub5ODwqHZehdPBPIcngwtqucJNxi579KZRJAoGAPukG\nFRUNuOUIMGY/9tQsMaf8rn96SGyRcHWUkgyOlniogp54jPiKK97a0HJK0LXMWelX\nutLKnstpSpmPHiZPTVt7uww0pi38IjmkSS7lNHUwGoqabiL9R+mHEi84spnJPMr+\n7ARJ+pGP9uXcsLSdNvmryfGchngGevB1bnGVgWECgYBx1HYoRpUcXbyvkAfRvWxK\nTE/zdyZX9dLIMPL02swRyu5TjDM6/dDInq7XIrPkKo1//nTsuTI4ISmy2gq7qA9v\naHDSiF8SQ5zIgVqvGnKdBG2R6B8iKqy387q3FuOoVTQkCc9GUsqvFlATBHGqKdRP\nqTCB7ZlToxCYPvsgnFN0rA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "bankbot@propane-terra-350613.iam.gserviceaccount.com",
+  "client_id": "109222637150118959281",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bankbot%40propane-terra-350613.iam.gserviceaccount.com"
+}

@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="he-IL">
+
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="robots" content="noindex" />
+    <link href="https://fonts.googleapis.com/css?family=Assistant:400,700&display=swap&subset=hebrew" rel="stylesheet" />
+    <title></title>
+    <style>
+        
+        .frame {
+           width:21cm;
+           height:100%`%;
+            border: 3px solid #050a87;
+            margin: 3px 30px 30px 30px;
+            padding: 15px 10px;
+            direction: rtl;
+            font-family: Arial;
+            font-size:21px;
+            padding-right:90px;
+            margin-left:40px;
+        }
+        .form{
+            
+            
+        }
+        .regInput {
+            border: 0;
+            outline: 0;
+            background: transparent;
+            border-bottom: 1px solid black;
+            display: inline;
+            margin: 10px;
+            width: 200px;
+        }
+        .block{
+            display:block;
+        }
+        .radio{
+            margin:10px;
+            width:20px;
+        }
+        .regSpan{
+           
+        }
+        .footerDiv{
+            width:210px;
+           display:inline-block;
+        }
+</style>
+    </head>
+<body>
+    <div style="margin:auto">
+        <div style="text-align:center;font-family: Arial;"><b>15</b>  עמוד <b>10</b> מתוך</div>
+        <div class="frame">
+            <div>בס"ד</div>
+            <img style="float:left;width:55px;height:55px;font-family: David;font-weight: 900;text-align:center" src="https://mllcr.info/static/images/Ishur9logo.jpg"></img>
+
+            <div style="text-decoration: underline;text-align:center;font-weight:700;font-size:20px">אישור לימודים בכולל</div>
+            <br /><br />
+            <div class="form">
+                <span class="regSpan">שם הכולל</span><input id="kolelNameInput"  value= {{data.MosdName}} class="regInput" />
+                <span class="regSpan">כתובת</span><input id="kolelAdressInput" style="width:275px"  value= {{data.MosdAdd}} class="regInput" />
+                <br />
+                <span class="regSpan">מספר טלפון</span><input type="tel" style="width:188px" id="kolelTelInput" value='0747871914' class="regInput" />
+                <span class="regSpan">סמל במשרד החינוך</span><input id="kolelSignInput" value= {{data.Mosd}} class="regInput" />
+                <br />
+                <div style="margin-top:10px"><span>הריני לאשר בזה כי:</span></div>
+
+                <span class="regSpan">שם</span><input id="nameInput"  value= "{{data.FirstName}} {{data.Family}}" class="regInput" />
+                <div style="width:105px;display:inline-block"><span>מספר ת. זהות (9 ספרות)</span></div><input id="idNumberInput" value= "{{ data.Zeout}}{{ data.Darkon}}" class="regInput" />
+                <br />
+                <span>תלמיד בכולל</span><input id="kolelInput" value= {{data.MosdName}} class="regInput" />
+                <span>מתאריך</span><input id="fromDateInput"  value= {{data.JoiningDate}} class="regInput" />
+                <br />
+                <div style="margin-top:10px">
+                    <span>לומד אצלינו בקביעות יום שלם/חצי יום (מחק את המיותר)</span>
+                </div>
+                <br />
+                <span>משעה</span><input id="fromHourInput" class="regInput" />
+                <span>עד שעה</span><input id="toHourInput" class="regInput" />
+                <br />
+                <span>בחודש אדר/ניסן תשפ"ג (מרץ/אפריל 2023) קיבל מלגת לימודים בסך </span><input id="sumInput" class="regInput" style="width:60px" />
+                <br />
+                <span>האם הכולל רשום (מוכר) במשרד החינוך?</span><input class="regInput" id="mucarInput" value= "כן" style="width:220px" />
+                <br />
+                <span>האם הכולל קיבל כספים בשנת 2023 ממשרד החינוך?</span><input class="regInput" id="gotMoneyInput"  value= "כן" style="width:150px" />
+                <br /><br />
+                <span>ידוע לנו, כי אישור זה ניתן לצורך קביעת זכאות להכללת בנו/בתו של תלמיד הכולל</span>
+                <br /><input value= "{{data.FirstName}} {{data.Family}}" class="regInput" id="talmidNameInput" style="width:350px" /><br />
+                <span>ברשימת התלמידים במוסדות, הזכאים למתן תמיכה ממשרד הרווחה והשירותים החברתיים - המחלקה למוסדות ציבור.</span>
+                <br /><br />
+                <span>אני מצהיר בזה כי כל הפרטים המצוינים לעיל נכונים.</span>
+                <br /><br />
+                <span value= {{data.MosdAuthorizedName}} style="margin-right:70px;float:right">שם המוסמך לחתום בשם הכולל</span><span style="float:left;margin-left:160px">תפקידו</span>
+                <br /><br />
+                <input value= {{data.MosdAuthorizedName}} style="margin-right:60px;float:right;width:250px" class="regInput"/><input value= "חבר וועד" style="float:left;margin-left:90px" class="regInput"/>
+                <br /><br />
+                <br />
+
+
+                <div>
+                    <table style="width: 100%; text-align: center;">
+                      <tr style="font-size: 21px;">
+                          <td style="width: 33%; padding: 0 10px;">
+                            תאריך
+                          <input type="text" name="" value= "{{data.Date}}" style="width: 100%; border-top: 0; padding-top: 59.5px; padding-bottom: 21px; border-left: 0; border-right: 0; border-bottom: 1px solid #817c7c; font-weight: bold; text-align: center;"><br>
+                        </td>
+                        <td style="width: 33%; padding: 0 10px;">
+                            חתימה
+                            <div><img src="https://mllcr.info/static/images/2.jpg" style="position: relative; height: 55px;top:18px;" alt=""></div>
+                          <input type="text" name="" value="" style="width: 100%; border-top: 0; border-left: 0; border-right: 0; border-bottom: 1px solid #817c7c; font-weight: bold; text-align: center; padding-bottom: 20px;"><br>
+                        </td>
+                        <td style="width: 33%; padding: 0 10px;">
+                            חותמת
+                            <img src="https://mllcr.info/static/images/1.jpg" style="position: relative; height: 75px; top:18px;" alt="">
+                          <input type="text" name="" value="" style="width: 100%; border-top: 0; border-left: 0; border-right: 0; border-bottom: 1px solid #817c7c; font-weight: bold; text-align: center;"><br>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                
+                <br /><br />
+                <span style="font-weight:700;text-decoration:underline">הערה:</span>
+                <br /><br />
+                <div style="border:1px solid black;padding:15px;margin-left:50px;text-align:center"><span>לפי חוק העונשין תשל"ז 1977/8, עשיית מסמך, הנחזה להיות את אשר איננו או עשוי להטעות, מהווה עבירה פלילית, שדינה מאסר עד חמש שנים. </span></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

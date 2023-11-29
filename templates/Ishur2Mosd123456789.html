@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+	<head>
+		<style>
+body{
+  background-color: #ffffff;
+  font-family: Assistant-SemiBold;
+  color: #000;
+  font-size: 18px;
+  }
+ .bold{
+  font-family: Assistant-Bold;
+ }
+page {
+  background: white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  padding: 25px 15px;
+  position: relative;
+}
+page[size="A4"] {
+  width: 21cm;
+  height: 29.7cm;
+}
+hr{
+  border: 1px solid #3b3b3b;
+  margin-top: 0px;
+}
+h1{
+  color: #0100ff;
+  text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+}
+h2{
+  text-align: center;
+      font-size: 19px;
+}
+p{
+  margin-bottom: 6px;
+  margin-top: 6px;
+}
+table{
+  width: 100%;
+  margin-top: 20px;
+      border-collapse: collapse;
+}
+th,td{
+  text-align: center;
+   padding: 4px;
+}
+th{
+  border-bottom: 2px solid #3b3b3b;
+      font-size: 15px;
+
+}
+td{
+  font-size: 12px;
+}
+.d-flex{
+  display: flex;
+}
+.w-25{
+  width: 25%;
+}
+.w-75{
+  width: 75%;
+}
+.w-50{
+  width: 50%;
+}
+.w-40{
+  width: 40%;
+}
+.w-20{
+  width: 20%;
+}
+.align-items-center{
+  align-items: center;
+}
+.content{
+
+}
+.footer{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 40px;
+  width: 96.8%;
+   padding: 5px 15px;
+}
+input{
+  border: 0px solid #ccc;
+      font-size: 15px;
+      padding: 0px;
+              padding-right: 9px;
+    width: 100%;
+}
+:focus-visible {
+    outline: -webkit-focus-ring-color auto 0px;
+}
+@media print {
+  body, page {
+    margin: 0;
+    box-shadow: 0;
+  }
+}
+		</style>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Table A4</title>
+      <!-- CSS -->
+    </head>
+    <body>
+    	<page size="A4">
+    		<hr>
+    		<h1 class="bold"> כותרת קבועה כותרת קבועה  </h1>
+    		<h2 class="bold"> אישור לימודים   </h2>
+    		<div class="content">
+    			<p>  לכל מאן דבעי    </p>
+    			<p>  הכינו לאשר כי:    </p>
+    			<table>
+    				<tr class="b-bottom">
+    					<th> <input type="text" placeholder="" value=" {{ data.FirstName}}     " style="text-align:center;"></th>
+    					<th><input type="text" placeholder="" value=" {{ data.Family}}     " style="text-align:center;"></th>
+    					<th><input type="text" placeholder="" value=" {{ data.student_identity_type}}     " style="text-align:center;"></th>
+    					<th><input type="text" placeholder="" value=" {{ data.student_identity}}     " style="text-align:center;"></th>
+    				</tr>
+    				<tr>
+    					<td> שם פרטי     </td>
+    					<td> שם משפחה    </td>
+    					<td> סוג מזהה תלמיד    </td>
+    					<td> מזהה תלמיד    </td>
+    				</tr>
+    			</table>
+
+    			<table>
+    				<tr class="b-bottom">
+    					<th> <input type="text" placeholder="" value=" {{ data.student_birth_date}}     " style="text-align:center;"></th>
+    					<th>  {{ data.student_gender}}   </th>
+    					<th><input type="text" placeholder="" value=" {{ data.student_marital_status}}     " style="text-align:center;"> </th>
+    					<th><input type="text" placeholder="" value=" {{ data.student_birth_state}}     " style="text-align:center;"></th>
+    				</tr>
+    				<tr>
+    					<td> תאריך לידה     </td>
+    					<td> מגדר    </td>
+    					<td> מצב משפחתי    </td>
+    					<td> ארץ מוצא    </td>
+    				</tr>
+    			</table>
+
+    			<table>
+    				<tr class="b-bottom">
+    					<th> {{ data.student_active_status}}    </th>
+    					<th>  <input type="text" placeholder="" value=" {{ data.student_month_since_registration}}     " style="text-align:center;"> </th>
+    				</tr>
+    				<tr>
+    					<td> מצב תלמיד     </td>
+    					<td> מספר חודשים ממועד הרישום    </td>
+    				</tr>
+
+    			</table>
+    			<p style="display: inline-block ; margin-left: 30px; margin-top: 20px;">  דווח ע"י מוסד:     </p>
+    			<p style="display: inline-block ;"> <input type="text" placeholder="" value="{{ data.institution_name}}, סניף {{ data.institution_id}}" style="text-align:center;">  </p>
+
+    			<div class="d-flex align-items-center">
+    				<div class="w-25">
+    					<p style="text-align: left; margin-left: 20px; font-size: 16px;">בסוג לימוד {{ data.student_study_type_name}}</p>
+    				</div>
+    				<div class="w-75">
+    					<table>
+		    				<tr class="b-bottom">
+		    					<th> <input type="text" placeholder="" value="{{ data.student_study_type_id}}" style="text-align:center;"> </th>
+		    					<th>  <input type="text" placeholder="" value="{{ data.student_study_type_name}}" style="text-align:center;"></th>
+		    				</tr>
+		    				<tr>
+		    					<td> מספר סוג לימוד     </td>
+		    					<td> שם סוג לימוד    </td>
+		    				</tr>
+
+		    			</table>
+    				</div>
+    			</div>
+    			<div class="d-flex align-items-center">
+    				<div class="w-25">
+    					<p style="text-align: right; margin-left: 20px;">  בחודש     </p>
+    				</div>
+    				<div class="w-25">
+    					<table>
+		    				<tr class="b-bottom">
+		    					<th> <input type="text" placeholder="" value=" {{ data.report_month}}     " style="text-align:center;">  </th>
+		    				</tr>
+		    				<tr>
+		    					<td> חודש דיווח     </td>
+		    				</tr>
+
+		    			</table>
+    				</div>
+    				<div class="w-25">
+    					<p style="text-align: right; margin-right: 5px;">  כתלמיד     </p>
+    				</div>
+    			</div>
+    			<br>
+    			<p>  בברכה,    </p>
+    			<p class="bold">  ותרת קבועה    </p>
+    			<p class="bold">  ותרת קבועה    </p>
+    		</div>
+    		<div class="footer d-flex align-items-center">
+					<p class="w-40" style="display: inline-block ; margin-left: 30px;font-size: 15px;">הופק ע"י : {{ data.generated_report_reporter_full_name}}</p>
+
+    				<p class="w-20" style="text-align: center;font-size: 15px;">1</p>
+
+    				<p class="w-40" style="text-align:left;font-size: 15px"><input type="text" placeholder="" value="{{ data.generated_report_report_date}}" style="text-align:left;"></p>
+
+    		</div>
+    	</page>
+    </body>
+</html>

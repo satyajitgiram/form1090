@@ -1,0 +1,113 @@
+import config
+from google.oauth2.credentials import Credentials
+from googleapiclient.discovery import build
+from google.oauth2 import service_account
+
+
+
+class GoogleSheetHandler:
+
+    creds = None
+    creds = service_account.Credentials.from_service_account_file(config.SERVICE_ACCOUNT_FILE, scopes = config.SCOPES)
+
+    # Call the Sheets API
+    service = build('sheets', 'v4', credentials=creds)
+    sheet = service.spreadsheets()
+
+
+    def __init__(self, data=None, sheet_name=None):
+        self.data = data
+        self.sheet_name = sheet_name          
+
+    def get_user_password(self):
+
+        """Fetching Username & Password """
+        result = self.sheet.values().get(spreadsheetId = config.SAMPLE_SPREADSHEET_ID, 
+                                        range ="USERS!B1:C3").execute()
+        get_values = result.get('values' , [])
+        print('Username & Password Fetched Successfully!')
+        # print(get_values)
+        return get_values
+
+
+    def get_student_detail(self):
+
+        """Fetching Student Details """
+        result = self.sheet.values().get(spreadsheetId = config.SAMPLE_SPREADSHEET_ID, 
+                                        range ="STUDENTS!AA:AE").execute()
+        get_values = result.get('values' , [])
+        print('Student Details Successfully Fetched')
+        # print(get_values)
+        return get_values        
+
+
+    def getsheet_id(self):
+        result = self.sheet.values().get(spreadsheetId = config.SAMPLE_SPREADSHEET_ID,
+                                    range = "STUDENTS!G3:T3").execute()
+        get_values = result.get('values', [])
+        print(f"GoogleSheet[{self.sheet_name}]: id Fetched Successfully")
+        return get_values
+        
+
+    def get_passport_records(self):
+        
+        """ Fetching the records from Google Sheet """
+        
+        result = self.sheet.values().get(spreadsheetId = config.SAMPLE_SPREADSHEET_ID,
+                                    range = F'{self.sheet_name}!G:A' ).execute()
+        get_values = result.get('values', [])
+        print(f"GoogleSheet[{self.sheet_name}]: Records Fetched Successfully")
+        return get_values
+
+    def get_branch_records(self):
+        
+        """ Fetching the records from Google Sheet """
+        
+        result = self.sheet.values().get(spreadsheetId = config.SAMPLE_SPREADSHEET_ID,
+                                    range = F'{self.sheet_name}!T:W' ).execute()
+        get_values = result.get('values', [])
+        print(f"GoogleSheet[{self.sheet_name}]: Records Fetched Successfully")
+        return get_values
+
+    def updatesheet_records(self):
+        
+        """ Updating the record in Google Sheet """
+       
+        records_to_update = self.data
+        request = self.sheet.values().update(spreadsheetId = config.SAMPLE_SPREADSHEET_ID, range=self.sheet_name, 
+        valueInputOption="USER_ENTERED", body={"values":records_to_update}).execute()
+        print('Records Updated Successfully!')
+        return request
+
+    def appendsheet_records_x(self):
+        
+        """ Appending/Inserting record in Google Sheet """
+        # rng = {'sheetId': '1192773689', 'startRowIndex': 3, 'startColumnIndex': 23}
+        # fields = 'userEnteredValue'
+        # body = {'requests': [{'updateCells': {'rows': self.data, 'range': rng, 'fields': fields}}]}
+        # request = self.sheet.batchUpdate(spreadsheetId=config.SAMPLE_SPREADSHEET_ID, body=body)
+        request = self.sheet.values().update(spreadsheetId = config.SAMPLE_SPREADSHEET_ID, range=f'STUDENTS!X3:Z', 
+            valueInputOption="USER_ENTERED", body={"values":self.data}).execute()
+        
+        print("Record Inserted Successfully!")
+        return request
+
+
+    def appendsheet_records_z(self):
+        
+        """ Appending/Inserting record in Google Sheet """
+
+        request = self.sheet.values().append(spreadsheetId = config.SAMPLE_SPREADSHEET_ID, range=f'{self.sheet_name}!Y3:AA3', 
+            valueInputOption="USER_ENTERED", body={"values":self.data}).execute()
+        
+        print("Record Inserted Successfully!")
+        return request
+
+    def clearsheet_records(self):
+        
+        """ Clearing records from Google Sheet """
+        request = self.sheet.values().clear(spreadsheetId = config.SAMPLE_SPREADSHEET_ID, range="").execute()
+        print("Records Cleared Successfully!")
+        return request
+
+# GoogleSheetHandler().appendsheet_records_x()

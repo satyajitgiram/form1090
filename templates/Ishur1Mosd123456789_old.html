@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Table A4</title>
+    <style>
+        body {
+            background-color: #ccc;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #000;
+            font-size: 18px;
+        }
+
+        page[size="A4"] {
+            width: 21cm;
+            height: 29.7cm;
+        }
+
+        @media print {
+            body, page {
+                margin: 0;
+                box-shadow: 0;
+            }
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .left-column {
+            float: right;
+            width: 19%;
+            height: 100%;
+        }
+
+        .right-column {
+            float: left;
+            width: 81%;
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+<page size="A4">
+    <img src="{{url}}/banner.jpg" style="width: 100%;"/>
+    <div class="container">
+        <div class="left-column">
+            <img src="{{url}}/banner1.jpg" style="width: 100%; height: a;"/>
+        </div>
+        <div class="right-column">
+            <div style="padding: 1rem;">
+                <p style="text-align: end; font-size: 16px; margin-left: 2rem;">10/08/201</p><br>
+                <div style="text-align: center;">
+                    <div style="font-size: 3rem; font-weight: bold;"><u>אישור סטודנט</u></div><br><br>
+                    <div style="font-size: 19px; margin-bottom: 15px;">הננו לאשר כי</div>
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr style="border-bottom: 1px solid #000;">
+                            <th style="text-align: center; padding: 0.5rem;">
+                                <input type="text" placeholder="" value="{{ data.student_first_name }}"
+                                       style="text-align: center;">
+                            </th>
+                            <th style="text-align: center; padding: 0.5rem;">
+                                <input type="text" placeholder="" value="{{ data.student_last_name }}"
+                                       style="text-align: center;">
+                            </th>
+                            <th style="text-align: center; padding: 0.5rem;">
+                                <input type="text" placeholder="" value="{{ data.student_identity_type }}"
+                                       style="text-align: center;">
+                            </th>
+                            <th style="text-align: center; padding: 0.5rem;">
+                                <input type="text" placeholder="" value="{{ data.student_identity }}"
+                                       style="text-align: center;">
+                            </th>
+                        </tr>
+                    </table>
+                    <div style="font-size: 19px; margin-bottom: 15px;">הינו תלמיד במוסדותינו</div><br><br><br>
+                    <div style="font-size: 19px; margin-bottom: 15px;">בכבוד רב</div>
+                    <div style="font-size: 15px; margin-bottom: 15px; font-weight: bold; text-align: center;">
+                        אהרן מלאכי ת.ז. 222050005<br>חבר ועד ומורשה חתימה
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <img src="{{url}}/banner.jpg" style="width: 100%;"/>
+</page>
+</body>
+</html>
